@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:#050816;
+    color:white;
+    font-family:Inter,sans-serif;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body::-webkit-scrollbar{
+    width:8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:#1e3a8a;
+    border-radius:20px;
+}
+
+.hero-overlay{
+    background:
+    linear-gradient(
+        rgba(2,6,23,.55),
+        rgba(2,6,23,.72)
+    );
+}
+
+.glass{
+
+backdrop-filter:blur(30px) saturate(180%);
+
+background:rgba(10,15,30,.48);
+
+border:1px solid rgba(255,255,255,.06);
+
+box-shadow:
+0 20px 80px rgba(0,0,0,.45);
+
+}
+
+.glow{
+
+    box-shadow:
+    0 0 40px rgba(56,189,248,.35);
+
+}
+.hero-title{
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -3px;
+    font-weight: 700;
+}
