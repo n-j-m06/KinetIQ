@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import HeroTyping from "../ui/HeroTyping";
 export default function HeroContent() {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, x: -40 }}
@@ -46,9 +48,10 @@ export default function HeroContent() {
 
       {/* Buttons */}
 
-      <div className="mt-8 flex items-center gap-4">
+      <div className="mt-6 flex items-center gap-4">
 
         <motion.button
+        onClick={() => navigate("/signup")}
           whileHover={{
             scale: 1.05,
             y: -3,
@@ -72,6 +75,7 @@ hover:shadow-[0_0_40px_rgba(14,165,233,0.45)]
         </motion.button>
 
         <motion.button
+        onClick={() => navigate("/demo")}
           whileHover={{
             scale: 1.05,
             y: -3,

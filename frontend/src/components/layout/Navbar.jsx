@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 export default function Navbar(){
-
+const navigate = useNavigate();
 return(
 
 <motion.nav
@@ -46,13 +46,13 @@ KINETIQ
 
 <div className="flex gap-4">
 
-<button className="px-6 py-2 rounded-full border border-white/20">
+<button onClick={() => navigate("/login")} className="px-6 py-2 rounded-full border border-white/20">
 
 Login
 
 </button>
 
-<button className="px-7 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 transition">
+<button onClick={() => navigate("/signup")} className="px-7 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 transition">
 
 Get Started
 

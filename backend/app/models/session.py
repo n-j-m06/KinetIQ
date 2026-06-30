@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, DateTime, String, ForeignKey
-from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from app.database.base import Base
 
@@ -18,7 +19,7 @@ class Session(Base):
 
     started_at = Column(
         DateTime(timezone=True),
-        server_default=func.now()
+        default=lambda: datetime.now(ZoneInfo("Asia/Kolkata"))
     )
 
     ended_at = Column(

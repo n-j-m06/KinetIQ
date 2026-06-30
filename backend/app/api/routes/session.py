@@ -1,6 +1,4 @@
-from fastapi import APIRouter
-from fastapi import Depends
-from fastapi import HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session as DBSession
 
 from app.database.session import get_db
@@ -8,12 +6,16 @@ from app.api.deps import get_current_user
 from app.models.user import User
 from app.models.session import Session
 from app.schemas.session import SessionResponse
+
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 router = APIRouter(
     prefix="/session",
     tags=["Sessions"]
 )
+
+
 @router.post(
     "/start",
     response_model=SessionResponse
@@ -34,7 +36,9 @@ def start_session(
         )
 
     session = Session(
-        user_id=current_user.id
+        user_id=current_user.id,
+        started_at=datetime.now(ZoneInfo("Asia/Kolkata")),
+        status="ACTIVE"
     )
 
     db.add(session)
@@ -42,6 +46,8 @@ def start_session(
     db.refresh(session)
 
     return session
+
+
 @router.post(
     "/end",
     response_model=SessionResponse
@@ -62,12 +68,14 @@ def end_session(
         )
 
     session.status = "ENDED"
-    session.ended_at = datetime.utcnow()
+    session.ended_at = datetime.now(ZoneInfo("Asia/Kolkata"))
 
     db.commit()
     db.refresh(session)
 
     return session
+
+
 @router.get(
     "/history",
     response_model=list[SessionResponse]
@@ -76,6 +84,9 @@ def history(
     db: DBSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    return db.query(Session).filter(
-        Session.user_id == current_user.id
-    ).all()
+    return (
+        db.query(Session)
+        .filter(Session.user_id == current_user.id)
+        .order_by(Session.started_at.desc())
+        .all()
+    )
