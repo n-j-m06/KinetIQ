@@ -4,7 +4,7 @@ import websockets
 
 async def test():
     async with websockets.connect(
-        "ws://127.0.0.1:8000/ws"
+        "wss://kinetiq-backend-9jlp.onrender.com/ws"
     ) as ws:
         while True:
             message = await ws.recv()
