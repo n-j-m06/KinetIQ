@@ -25,7 +25,7 @@ export default function LoginForm() {
 localStorage.setItem("token", data.access_token);
 
 // Fetch logged-in user's details
-const me = await fetch("import.meta.env.VITE_API_URL/auth/me", {
+const me = await fetch(`${import.meta.env.VITE_API_URL}/auth/me`, {
   headers: {
     Authorization: `Bearer ${data.access_token}`,
   },
