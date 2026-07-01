@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import {
-  Search,
-  Bell,
-  ChevronDown,
   UserCircle2,
 } from "lucide-react";
 
 export default function DashboardNavbar() {
     const userName =
   localStorage.getItem("userName") || "Driver";
+ 
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -49,51 +47,19 @@ export default function DashboardNavbar() {
         >
           KINETIQ
         </motion.h1>
+       <div className="flex-1 mx-12 overflow-hidden">
 
-        {/* Search */}
+  <div className="rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-6 py-3 overflow-hidden">
 
-        <div
-          className="
-            flex
+    <div className="marquee whitespace-nowrap text-cyan-300 font-medium">
 
-            w-[420px]
+      🟢 SYSTEM ONLINE • 📷 CAMERA CONNECTED • 🤖 AI DRIVER MONITORING ACTIVE • 📊 LIVE ANALYTICS RUNNING • ⚡ BACKEND CONNECTED • 🚗 DRIVER BEHAVIOUR ANALYSIS ACTIVE • 🔔 NO CRITICAL ALERTS • 🛡️ SAFETY SYSTEM ENABLED
 
-            items-center
+    </div>
 
-            gap-3
+  </div>
 
-            rounded-2xl
-
-            border
-
-            border-white/10
-
-            bg-white/5
-
-            px-5
-
-            py-3
-          "
-        >
-          <Search
-            size={18}
-            className="text-slate-400"
-          />
-
-          <input
-            placeholder="Search..."
-            className="
-              w-full
-
-              bg-transparent
-
-              outline-none
-
-              placeholder:text-slate-500
-            "
-          />
-        </div>
-
+</div>
         {/* Right */}
 
         <div className="flex items-center gap-6">
@@ -145,11 +111,6 @@ export default function DashboardNavbar() {
               </p>
 
             </div>
-
-            <ChevronDown
-              size={18}
-              className="text-slate-400"
-            />
 
           </div>
 

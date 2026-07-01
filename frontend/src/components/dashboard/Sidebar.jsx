@@ -6,8 +6,6 @@ import {
   BarChart3,
   FileText,
   User,
-  Settings,
-  ChevronLeft,
   LogOut,
 } from "lucide-react";
 
@@ -36,11 +34,6 @@ const menus = [
     title: "Profile",
     icon: User,
     path: "/profile",
-  },
-  {
-    title: "Settings",
-    icon: Settings,
-    path: "/settings",
   },
 ];
 

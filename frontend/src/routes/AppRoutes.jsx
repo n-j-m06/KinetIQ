@@ -14,7 +14,6 @@ import Monitoring from "../pages/Monitoring";
 import Analytics from "../pages/Analytics";
 import Reports from "../pages/Reports";
 import Profile from "../pages/Profile";
-import Settings from "../pages/Settings";
 
 // Protect Dashboard Routes
 function ProtectedRoute({ children }) {
@@ -85,15 +84,6 @@ export default function AppRoutes() {
           element={
             <ProtectedRoute>
               <Profile />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/settings"
-          element={
-            <ProtectedRoute>
-              <Settings />
             </ProtectedRoute>
           }
         />
