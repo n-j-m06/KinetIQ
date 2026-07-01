@@ -52,9 +52,11 @@ export default function Sidebar() {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
       className="
-        fixed
-        left-0
-        top-[82px]
+hidden
+lg:block
+fixed
+left-0
+top-[82px]
         h-[calc(100vh-82px)]
         w-[240px]
         border-r

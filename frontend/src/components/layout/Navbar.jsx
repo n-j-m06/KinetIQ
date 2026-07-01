@@ -12,7 +12,24 @@ animate={{y:0}}
 
 transition={{duration:.8}}
 
-className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[1550px] glass rounded-full px-8 py-2 flex items-center justify-between">
+className="
+fixed
+top-3
+md:top-6
+left-1/2
+-translate-x-1/2
+z-50
+w-[95%]
+max-w-[1550px]
+glass
+rounded-full
+px-4
+md:px-8
+py-2
+flex
+items-center
+justify-between
+">
 
 <div className="flex items-center gap-3">
 
@@ -46,13 +63,13 @@ KINETIQ
 
 <div className="flex gap-4">
 
-<button onClick={() => navigate("/login")} className="px-6 py-2 rounded-full border border-white/20">
+<button onClick={() => navigate("/login")} className="px-3 md:px-6 py-2 text-sm md:text-base rounded-full border border-white/20">
 
 Login
 
 </button>
 
-<button onClick={() => navigate("/signup")} className="px-7 py-2 rounded-full bg-cyan-500 hover:bg-cyan-400 transition">
+<button onClick={() => navigate("/signup")} className="px-4 md:px-7 py-2 text-sm md:text-base rounded-full bg-cyan-500 hover:bg-cyan-400 transition">
 
 Get Started
 

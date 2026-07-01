@@ -65,10 +65,11 @@ export default function AppLayout({ children }) {
 
         <main
           className="
-            ml-[240px]
             mt-[82px]
-            flex-1
-            p-8
+      flex-1
+      p-4
+      md:p-8
+      lg:ml-[240px]
           "
         >
           {children}
