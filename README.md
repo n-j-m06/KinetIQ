@@ -29,7 +29,7 @@ Built with a modern full-stack architecture, KINETIQ integrates a React frontend
 
 ### 👤 Driver Profile Management
 
-* Personalized Driver Profiles
+* Personalized Driver Profile
 * Profile Updates
 * Driver Information Dashboard
 * Behaviour Profile Association
